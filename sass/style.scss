@@ -1,0 +1,19 @@
+@import "mixins";
+@import "loginForm";
+
+*{
+    margin:0;
+    padding: 0;
+    box-sizing:border-box;
+}
+
+
+body{
+   background-image: url('../img/bgc.jpg');
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position: center;
+   height: 100vh;
+   font-family: 'arial';
+   
+}

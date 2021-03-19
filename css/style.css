@@ -1,0 +1,292 @@
+.wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background-color: white;
+  border-radius: 10px;
+  width: 90%;
+  min-height: 85vh;
+  z-index: 1;
+}
+
+@media (min-width: 576px) {
+  .wrapper {
+    width: 75%;
+    min-height: 95vh;
+  }
+}
+
+@media (min-width: 768px) {
+  .wrapper {
+    min-height: 60vh;
+  }
+}
+
+@media (min-width: 992px) {
+  .wrapper {
+    min-height: 70vh;
+  }
+}
+
+@media (min-width: 1400px) {
+  .wrapper {
+    width: 40%;
+  }
+}
+
+@media (min-width: 992px) {
+  .wrapper .image {
+    background-image: url(../img/pexels-mark-mccammon-1080953.jpg);
+    width: 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 10px 0 0 10px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .wrapper .image {
+    width: 50%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    -webkit-transition: 1s;
+    transition: 1s;
+    z-index: 1;
+  }
+}
+
+.wrapper .registration {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 70%;
+}
+
+@media (min-width: 576px) {
+  .wrapper .registration {
+    width: 60%;
+  }
+}
+
+@media (min-width: 992px) {
+  .wrapper .registration {
+    width: 50%;
+  }
+}
+
+@media (min-width: 1400px) {
+  .wrapper .registration {
+    width: 50%;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    -webkit-transition: 1s;
+    transition: 1s;
+  }
+}
+
+.wrapper .registration h2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.wrapper .registration form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-flex: 2;
+      -ms-flex-positive: 2;
+          flex-grow: 2;
+}
+
+.wrapper .registration form input {
+  border: 0px;
+  border-bottom: 1px solid #c4c1c1;
+  font-size: 15px;
+  padding: 5px 0;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+@media (min-width: 992px) {
+  .wrapper .registration form input {
+    width: 80%;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+}
+
+@media (min-width: 1200px) {
+  .wrapper .registration form input {
+    width: 60%;
+  }
+}
+
+@media (min-width: 1400px) {
+  .wrapper .registration form input {
+    width: 80%;
+  }
+}
+
+.wrapper .registration form input:focus {
+  outline: none;
+  border-bottom: 1px solid #c95fe4;
+  font-weight: 700;
+}
+
+.wrapper .registration form .name-field {
+  display: none;
+}
+
+.wrapper .registration form .name-field.active {
+  display: block;
+}
+
+.wrapper .registration form button {
+  padding: 12px 0;
+  font-size: 16px;
+  border-radius: 20px;
+  border: 0px;
+  background: #c95fe4;
+  color: white;
+  font-weight: 600;
+  width: 100%;
+  margin: 0 auto;
+}
+
+@media (min-width: 576px) {
+  .wrapper .registration form button {
+    width: 80%;
+    margin-top: 5px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .wrapper .registration form button {
+    width: 60%;
+  }
+}
+
+@media (min-width: 1400px) {
+  .wrapper .registration form button {
+    width: 80%;
+  }
+}
+
+.wrapper .registration form .signInBtn.active {
+  display: block;
+}
+
+.wrapper .registration form .signInBtn {
+  display: none;
+}
+
+.wrapper .registration form .signUpBtn.active {
+  display: block;
+}
+
+.wrapper .registration form .signUpBtn {
+  display: none;
+}
+
+.wrapper .registration footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.wrapper .registration footer p {
+  text-align: center;
+  width: 100%;
+  margin-bottom: 15px;
+  color: grey;
+}
+
+.wrapper .registration footer i {
+  font-size: 22px;
+  padding: 0 10px;
+}
+
+.wrapper .registration footer .fa-facebook {
+  color: #3e3edf;
+}
+
+.wrapper .registration footer .fa-google {
+  color: #c72929;
+}
+
+.wrapper .registration #toggler {
+  font-size: 15px;
+  font-weight: normal;
+  color: grey;
+  cursor: pointer;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-image: url("../img/bgc.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+  font-family: 'arial';
+}
+/*# sourceMappingURL=style.css.map */

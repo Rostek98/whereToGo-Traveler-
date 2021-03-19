@@ -1,0 +1,177 @@
+
+.wrapper {
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border-radius: 10px;
+  width: 90%;
+  min-height: 85vh;
+  z-index: 1;
+  @media (min-width: 576px) {
+    width: 75%;
+    min-height: 95vh;
+  }
+  @media (min-width: 768px) { 
+      min-height: 60vh;
+   }
+   @media (min-width: 992px) {
+      min-height: 70vh;
+    }
+    @media (min-width: 1400px) { 
+        width: 40%;
+      }
+    .image{
+      
+        @media (min-width: 992px) {
+            background-image: url(../img/pexels-mark-mccammon-1080953.jpg);
+            width: 50%;
+          background-size: cover;
+          background-repeat: no-repeat;
+          border-radius: 10px 0 0 10px;
+          }
+          @media (min-width: 1400px) { 
+              width: 50%;
+              position: absolute;
+              top: 0;
+              bottom: 0;
+              left: 0;
+            transition: 1s;
+            z-index: 1;
+
+          }
+          
+          
+    }
+  .registration {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 70%;
+    @media (min-width: 576px) {
+      width: 60%;
+    }
+    @media (min-width: 992px) {
+        width: 50%;
+        
+      }
+      @media (min-width: 1400px) { 
+        width: 50%;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        transition: 1s;
+    }
+
+    h2 {
+      @include displayCenter;
+      flex-grow: 1;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-content: center;
+      flex-grow: 2;
+      input {
+        border: 0px;
+        border-bottom: 1px solid rgb(196, 193, 193);
+        font-size: 15px;
+        padding: 5px 0;
+        transition: 0.2s;
+        @media (min-width: 992px) {
+            width: 80%;
+            align-self: center;
+            
+          }
+          @media (min-width: 1200px) { 
+            width: 60%;
+
+           }
+           @media (min-width: 1400px) { 
+            width: 80%;
+        }
+
+        &:focus {
+          outline: none;
+          border-bottom: 1px solid rgb(201, 95, 228);
+          font-weight: 700;
+        }
+        
+      }
+      .name-field {
+        display: none;
+      }
+      .name-field.active {
+        display: block;
+      }
+      button {
+        padding: 12px 0;
+        font-size: 16px;
+        border-radius: 20px;
+        border: 0px;
+        background: rgb(201, 95, 228);
+        color: white;
+        font-weight: 600;
+        width: 100%;
+        margin: 0 auto;
+        @media (min-width: 576px) {
+          width: 80%;
+          margin-top: 5px;
+        }
+        @media (min-width: 1200px) { 
+            width: 60%;
+
+           }
+           @media (min-width: 1400px) { 
+            width: 80%;
+        }
+      }
+      .signInBtn.active {
+        display: block;
+      }
+      .signInBtn {
+        display: none;
+      }
+      .signUpBtn.active {
+        display: block;
+      }
+      .signUpBtn {
+        display: none;
+      }
+    }
+    footer {
+      @include displayCenter;
+      flex-direction: column;
+      justify-content: center;
+      flex-wrap: wrap;
+      flex-grow: 1;
+      p {
+        text-align: center;
+        width: 100%;
+        margin-bottom: 15px;
+        color: grey;
+      }
+      i {
+        font-size: 22px;
+        padding: 0 10px;
+      }
+      .fa-facebook {
+        color: rgb(62, 62, 223);
+      }
+      .fa-google {
+        color: rgb(199, 41, 41);
+      }
+    }
+    #toggler {
+      font-size: 15px;
+      font-weight: normal;
+      color: grey;
+      cursor: pointer;
+    }
+  }
+}

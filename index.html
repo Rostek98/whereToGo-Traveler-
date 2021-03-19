@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
+    <link rel="stylesheet" href='./css/style.css'>
+    <title>Document</title>
+</head>
+<body>
+    
+    <div class="wrapper">
+        <section class="image"></section>
+        <section class="registration">
+            <h2 class='mainTxt'>Sign In</h2>
+            <form action="">
+                <input  class="name-field" type="text" placeholder="Enter your name:" >
+                <input classg="email-field" type="email" placeholder="Email:">
+                <input  class="password-field" type="password" placeholder="Password">
+                <button class='signInBtn active'>Sign in</button>
+                <button class='signUpBtn' >Sign up</button>
+            </form>
+            <footer>
+                <p>Or login with</p>
+                <div>
+                    <i class="fab fa-facebook"></i>
+                    <i class="fab fa-google"></i>
+                </div>
+                
+            </footer>
+            <h2 id='toggler'>Sing up</h2>
+        </section>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-auth.js"></script>
+
+    <script src="app.js"></script>
+</body>
+</html>
