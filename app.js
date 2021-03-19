@@ -9,6 +9,7 @@ var firebaseConfig = {
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
+
 const switchToRegister = document.getElementById("toggler");
 const emailField = document.querySelector(".email-field");
 const nameField = document.querySelector(".name-field");
@@ -18,6 +19,10 @@ const signUpBtn = document.querySelector(".signUpBtn");
 const mainTxt = document.querySelector(".mainTxt");
 const formPart = document.querySelector(".registration");
 const imagePart = document.querySelector(".image");
+const hamburger = document.querySelector(".fas.fa-bars");
+const ul = document.querySelector("ul");
+const logOutBtn = document.querySelector(".logOut");
+
 let left = true;
 //Change to register
 const toggleSign = () => {
@@ -89,5 +94,3 @@ function signIn(e) {
 
 signInBtn.addEventListener("click", signIn);
 signUpBtn.addEventListener("click", signUp);
-
-

@@ -110,11 +110,16 @@
         font-weight: 600;
         width: 100%;
         margin: 0 auto;
+        cursor: pointer;
+        transition: .3s;
         @media (min-width: 576px) {
           width: 80%;
           margin-top: 5px;
         }
         @media (min-width: 1200px) {
+          &:hover{
+            background-color: black;
+          }
           width: 60%;
         }
         @media (min-width: 1400px) {

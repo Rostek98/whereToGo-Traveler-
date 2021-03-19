@@ -188,6 +188,9 @@
   font-weight: 600;
   width: 100%;
   margin: 0 auto;
+  cursor: pointer;
+  -webkit-transition: .3s;
+  transition: .3s;
 }
 
 @media (min-width: 576px) {
@@ -200,6 +203,9 @@
 @media (min-width: 1200px) {
   .wrapper .registration form button {
     width: 60%;
+  }
+  .wrapper .registration form button:hover {
+    background-color: black;
   }
 }
 
@@ -429,6 +435,14 @@ nav ul.active {
   background-color: #fff;
   text-decoration: none;
   color: black;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+@media (min-width: 1024px) {
+  .main-btn:hover {
+    font-size: 23px;
+  }
 }
 
 * {
