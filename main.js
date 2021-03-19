@@ -13,6 +13,9 @@ firebase.initializeApp(firebaseConfig);
 const hamburger = document.querySelector(".fas.fa-bars");
 const ul = document.querySelector("ul");
 const logOutBtn = document.querySelector(".logOut");
+const infoIcon = document.querySelector('.fa-info-circle');
+const infoAboutObject = document.querySelector('.info');
+const closeInfo = document.querySelector('.fas.fa-times');
 
 // Hamburger
 
@@ -35,3 +38,14 @@ function logOut() {
 }
 
 logOutBtn.addEventListener("click", logOut);
+
+//Expand info div
+function moreInfo(){
+  infoAboutObject.classList.add('active');
+}
+//Close info div
+function lessInfo(){
+  infoAboutObject.classList.remove('active');
+}
+closeInfo.addEventListener('click',lessInfo);
+infoIcon.addEventListener('click', moreInfo);
