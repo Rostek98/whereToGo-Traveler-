@@ -22,8 +22,12 @@
   }
 }
 nav {
+  position: absolute;
+  min-height: 100vh;
   width: 100%;
+  overflow: hidden;
   ul {
+    width: 100%;
     position: absolute;
     display: flex;
     justify-content: center;

@@ -19,30 +19,72 @@
     .fas.fa-bars {
       color: white;
     }
-    .searchBarWrapper{
-        position: absolute;
-        top: 25%;
-        left: 50%;
-        transform: translate(-50%, -25%);
+    .searchBarWrapper {
+      position: absolute;
+      top: 25%;
+      left: 50%;
+      transform: translate(-50%, -25%);
+      width: 80%;
+      text-align: center;
+      h2 {
+        font-family: "Lobster", cursive;
+        font-size: 28px;
+        color: white;
+        font-weight: normal;
+        padding: 20px 0;
+        @media (min-width: 1200px) { 
+           font-size: 35px;
+         }
+         @media (min-width: 1650px) { 
+            font-size: 40px;
+         }
+      }
+      .searchBar {
+        position: relative;
         width: 100%;
-        text-align: center;
-        .searchBar{
-            width: 70%;
-            padding: 8px 0;
-            border-radius: 20px;
+        padding: 8px 0;
+        border-radius: 20px;
+        border: 0;
+        &:focus {
+          outline: none;
+          border-bottom: 1px solid rgb(201, 95, 228);
+          font-weight: 700;
+          font-size: 15px;
+          @media (min-width: 1200px) { 
+            font-size: 18px;
+         }
         }
+        @media (min-width: 640px) { 
+            width: 60%;
+         }
+        @media (min-width: 768px) { 
+            width: 60%;
+         }
+        @media (min-width: 1024px) { 
+            width: 55%;
+            padding: 10px 0;
+         }
+        @media (min-width: 1200px) { 
+            width: 40%;
+            padding: 15px 0;
+         }
+        @media (min-width: 1650px) { 
+            width: 35%;
+            padding: 15px 0;
+         }
+
+      }
     }
   }
 }
 
 main {
-    display: flex;
-    flex-direction: column;
-    @media (min-width: 768px) { 
-        flex-direction: row;
-        flex-wrap: wrap;
-    
-    }
+  display: flex;
+  flex-direction: column;
+  @media (min-width: 768px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
   .card {
     position: relative;
     display: flex;
@@ -52,22 +94,18 @@ main {
     width: 90%;
     margin: 10px auto;
     margin-bottom: 50px;
-    @media (min-width: 768px) { 
-        width: 45%;
-    
+    @media (min-width: 768px) {
+      width: 45%;
     }
-    @media (min-width: 1200px) { 
-        width: 30%;
-        
-     }
-     @media (min-width: 1400px) { 
-        width: 26%;
-        
-     }
-     @media (min-width: 1650px) { 
-        width: 20%;
-        
-     }
+    @media (min-width: 1200px) {
+      width: 30%;
+    }
+    @media (min-width: 1400px) {
+      width: 26%;
+    }
+    @media (min-width: 1650px) {
+      width: 20%;
+    }
 
     .cardImage {
       position: relative;
@@ -122,18 +160,17 @@ main {
       font-family: "Montserrat", sans-serif;
       font-size: 17px;
       font-weight: 700;
-      color:white;
-      p{
-      padding: 20px 0;
-
+      color: white;
+      p {
+        padding: 20px 0;
       }
-      transition: .3s linear;
-    .fas.fa-times{
+      transition: 0.3s linear;
+      .fas.fa-times {
         position: absolute;
-        top:5%;
-        right:10%;
+        top: 5%;
+        right: 10%;
         font-size: 25px;
-        }
+      }
     }
     .info.active {
       top: 0;

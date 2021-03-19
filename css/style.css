@@ -307,10 +307,14 @@
 }
 
 nav {
+  position: absolute;
+  min-height: 100vh;
   width: 100%;
+  overflow: hidden;
 }
 
 nav ul {
+  width: 100%;
   position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -473,14 +477,82 @@ nav ul.active {
   left: 50%;
   -webkit-transform: translate(-50%, -25%);
           transform: translate(-50%, -25%);
-  width: 100%;
+  width: 80%;
   text-align: center;
 }
 
+.wrapper-finder header .searchBarWrapper h2 {
+  font-family: "Lobster", cursive;
+  font-size: 28px;
+  color: white;
+  font-weight: normal;
+  padding: 20px 0;
+}
+
+@media (min-width: 1200px) {
+  .wrapper-finder header .searchBarWrapper h2 {
+    font-size: 35px;
+  }
+}
+
+@media (min-width: 1650px) {
+  .wrapper-finder header .searchBarWrapper h2 {
+    font-size: 40px;
+  }
+}
+
 .wrapper-finder header .searchBarWrapper .searchBar {
-  width: 70%;
+  position: relative;
+  width: 100%;
   padding: 8px 0;
   border-radius: 20px;
+  border: 0;
+}
+
+.wrapper-finder header .searchBarWrapper .searchBar:focus {
+  outline: none;
+  border-bottom: 1px solid #c95fe4;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+@media (min-width: 1200px) {
+  .wrapper-finder header .searchBarWrapper .searchBar:focus {
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 640px) {
+  .wrapper-finder header .searchBarWrapper .searchBar {
+    width: 60%;
+  }
+}
+
+@media (min-width: 768px) {
+  .wrapper-finder header .searchBarWrapper .searchBar {
+    width: 60%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .wrapper-finder header .searchBarWrapper .searchBar {
+    width: 55%;
+    padding: 10px 0;
+  }
+}
+
+@media (min-width: 1200px) {
+  .wrapper-finder header .searchBarWrapper .searchBar {
+    width: 40%;
+    padding: 15px 0;
+  }
+}
+
+@media (min-width: 1650px) {
+  .wrapper-finder header .searchBarWrapper .searchBar {
+    width: 35%;
+    padding: 15px 0;
+  }
 }
 
 main {
@@ -623,8 +695,8 @@ main .card .info {
   font-size: 17px;
   font-weight: 700;
   color: white;
-  -webkit-transition: .3s linear;
-  transition: .3s linear;
+  -webkit-transition: 0.3s linear;
+  transition: 0.3s linear;
 }
 
 main .card .info p {
