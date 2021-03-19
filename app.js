@@ -89,3 +89,5 @@ function signIn(e) {
 
 signInBtn.addEventListener("click", signIn);
 signUpBtn.addEventListener("click", signUp);
+
+

@@ -1,4 +1,3 @@
-
 .wrapper {
   display: flex;
   position: absolute;
@@ -15,37 +14,33 @@
     width: 75%;
     min-height: 95vh;
   }
-  @media (min-width: 768px) { 
-      min-height: 60vh;
-   }
-   @media (min-width: 992px) {
-      min-height: 70vh;
+  @media (min-width: 768px) {
+    min-height: 60vh;
+  }
+  @media (min-width: 992px) {
+    min-height: 70vh;
+  }
+  @media (min-width: 1400px) {
+    width: 40%;
+  }
+  .image {
+    @media (min-width: 992px) {
+      background-image: url(../img/pexels-mark-mccammon-1080953.jpg);
+      width: 50%;
+      background-size: cover;
+      background-repeat: no-repeat;
+      border-radius: 10px 0 0 10px;
     }
-    @media (min-width: 1400px) { 
-        width: 40%;
-      }
-    .image{
-      
-        @media (min-width: 992px) {
-            background-image: url(../img/pexels-mark-mccammon-1080953.jpg);
-            width: 50%;
-          background-size: cover;
-          background-repeat: no-repeat;
-          border-radius: 10px 0 0 10px;
-          }
-          @media (min-width: 1400px) { 
-              width: 50%;
-              position: absolute;
-              top: 0;
-              bottom: 0;
-              left: 0;
-            transition: 1s;
-            z-index: 1;
-
-          }
-          
-          
+    @media (min-width: 1400px) {
+      width: 50%;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      transition: 1s;
+      z-index: 1;
     }
+  }
   .registration {
     display: flex;
     flex-direction: column;
@@ -55,16 +50,15 @@
       width: 60%;
     }
     @media (min-width: 992px) {
-        width: 50%;
-        
-      }
-      @media (min-width: 1400px) { 
-        width: 50%;
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        right: 0;
-        transition: 1s;
+      width: 50%;
+    }
+    @media (min-width: 1400px) {
+      width: 50%;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      transition: 1s;
     }
 
     h2 {
@@ -84,16 +78,14 @@
         padding: 5px 0;
         transition: 0.2s;
         @media (min-width: 992px) {
-            width: 80%;
-            align-self: center;
-            
-          }
-          @media (min-width: 1200px) { 
-            width: 60%;
-
-           }
-           @media (min-width: 1400px) { 
-            width: 80%;
+          width: 80%;
+          align-self: center;
+        }
+        @media (min-width: 1200px) {
+          width: 60%;
+        }
+        @media (min-width: 1400px) {
+          width: 80%;
         }
 
         &:focus {
@@ -101,7 +93,6 @@
           border-bottom: 1px solid rgb(201, 95, 228);
           font-weight: 700;
         }
-        
       }
       .name-field {
         display: none;
@@ -123,12 +114,11 @@
           width: 80%;
           margin-top: 5px;
         }
-        @media (min-width: 1200px) { 
-            width: 60%;
-
-           }
-           @media (min-width: 1400px) { 
-            width: 80%;
+        @media (min-width: 1200px) {
+          width: 60%;
+        }
+        @media (min-width: 1400px) {
+          width: 80%;
         }
       }
       .signInBtn.active {
@@ -162,9 +152,11 @@
       }
       .fa-facebook {
         color: rgb(62, 62, 223);
+        cursor: pointer;
       }
       .fa-google {
         color: rgb(199, 41, 41);
+        cursor: pointer;
       }
     }
     #toggler {

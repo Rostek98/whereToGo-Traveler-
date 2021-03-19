@@ -1,5 +1,6 @@
 @import "mixins";
 @import "loginForm";
+@import "mainPhone";
 
 *{
     margin:0;
@@ -9,7 +10,7 @@
 
 
 body{
-   background-image: url('../img/bgc.jpg');
+   background-image:linear-gradient(to bottom, rgba(17, 17, 17, 0.52), rgba(117, 19, 93, 0.73)), url('../img/bgc.jpg');
    background-size: cover;
    background-repeat: no-repeat;
    background-position: center;
