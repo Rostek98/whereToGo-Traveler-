@@ -585,7 +585,7 @@ main .card {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  min-height: 400px;
+  min-height: 350px;
   -webkit-box-shadow: 0 0 10px 0 black;
           box-shadow: 0 0 10px 0 black;
   width: 90%;

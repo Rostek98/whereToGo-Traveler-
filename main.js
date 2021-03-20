@@ -19,6 +19,7 @@ const infoAboutObject = document.querySelector(".info");
 const closeInfo = document.querySelector(".fas.fa-times");
 const mainDiv = document.querySelector("main");
 const renderTest = document.querySelector(".renderTest");
+const searchBar = document.querySelector(".searchBar");
 
 // Hamburger
 
@@ -50,10 +51,10 @@ function moreInfo(clickedElement, openInfo) {
 }
 //Close info div
 function lessInfo(closeIcon, closeInfo) {
-  closeIcon.addEventListener('click',() => closeInfo.classList.remove('active'));
-
+  closeIcon.addEventListener("click", () =>
+    closeInfo.classList.remove("active")
+  );
 }
-
 
 //Render cards
 
@@ -67,8 +68,8 @@ function renderCards(doc) {
   card.appendChild(cardImage);
 
   const image = document.createElement("img");
-  // image.setAttribute("src", doc.data().img);
-  image.setAttribute("src", "./img/mainPhone/for1920.jpg");
+  image.setAttribute("src", doc.data().img);
+  // image.setAttribute("src", "./img/mainPhone/for1920.jpg");
   cardImage.appendChild(image);
 
   const cardTitle = document.createElement("div");
@@ -76,8 +77,8 @@ function renderCards(doc) {
   card.appendChild(cardTitle);
 
   const h2 = document.createElement("h2");
-  // h2.textContent = doc.data().name;
-  h2.textContent = "Name of place";
+  h2.textContent = doc.data().name;
+  // h2.textContent = "Name of place";
   cardTitle.appendChild(h2);
 
   const textAndIcons = document.createElement("div");
@@ -98,23 +99,23 @@ function renderCards(doc) {
   moreInfo(secondIcon, info);
 
   const firstP = document.createElement("p");
-  // firstP.textContent = `City: ${doc.data().city}`;
-  firstP.textContent = "City:Lviv";
+  firstP.textContent = `City: ${doc.data().city}`;
+  // firstP.textContent = "City:Lviv";
   info.appendChild(firstP);
 
   const secondP = document.createElement("p");
-  // secondP.textContent = `Region: ${doc.data().region}`;
-  secondP.textContent = `Region:Lviv Oblast`;
+  secondP.textContent = `Region: ${doc.data().region}`;
+  // secondP.textContent = `Region:Lviv Oblast`;
   info.appendChild(secondP);
 
   const thirdP = document.createElement("p");
-  // thirdP.textContent = `Code: ${doc.data().postalcode}`;
-  thirdP.textContent = `Postal Code: 79008`;
+  thirdP.textContent = `Code: ${doc.data().postalcode}`;
+  // thirdP.textContent = `Postal Code: 79008`;
   info.appendChild(thirdP);
 
   const fourthP = document.createElement("p");
-  // fourthP.textContent = `Address: ${doc.data().address}`;
-  fourthP.textContent = `Address:Rynok Square, 1`;
+  fourthP.textContent = `Address: ${doc.data().address}`;
+  // fourthP.textContent = `Address:Rynok Square, 1`;
   info.appendChild(fourthP);
 
   const lastIcon = document.createElement("i");
@@ -123,5 +124,42 @@ function renderCards(doc) {
   lessInfo(lastIcon, info);
 }
 
+//Function filter
 
-renderTest.addEventListener('click',renderCards);
+function findAndFilter(e) {
+  const inputValue = e.target.value.toLowerCase();
+  if (inputValue === "odessa") {
+    orderOdessa();
+  } else if (inputValue === "") mainDiv.innerHTML = "";
+  if (inputValue === "warsaw") {
+    orderWarsaw();
+  }
+}
+
+searchBar.addEventListener("input", findAndFilter);
+
+function orderOdessa() {
+  db.collection("Ukraine")
+    .where("city", "==", "Odessa")
+    .get()
+    .then((querySnapshot) => {
+      querySnapshot.forEach((doc) => {
+        // doc.data() is never undefined for query doc snapshots
+        console.log(doc.id, " => ", doc.data());
+        renderCards(doc);
+      });
+    })
+    .catch((error) => {
+      console.log("Error getting documents: ", error);
+    });
+}
+
+function orderWarsaw() {
+  var order = db.collection("Poland").where("city", "==", "Warsaw");
+  order.get().then(function (querySnapshot) {
+    querySnapshot.forEach(function (doc) {
+      console.log(doc.id, " => ", doc.data());
+      renderCards(doc);
+    });
+  });
+}
