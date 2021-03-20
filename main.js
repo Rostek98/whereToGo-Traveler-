@@ -18,6 +18,7 @@ const infoIcon = document.querySelector(".fas.fa-info-circle");
 const infoAboutObject = document.querySelector(".info");
 const closeInfo = document.querySelector(".fas.fa-times");
 const mainDiv = document.querySelector("main");
+const renderTest = document.querySelector(".renderTest");
 
 // Hamburger
 
@@ -41,16 +42,18 @@ function logOut() {
 
 logOutBtn.addEventListener("click", logOut);
 
-//Expand info div
-function moreInfo() {
-  infoAboutObject.classList.add("active");
+// Expand info div
+function moreInfo(clickedElement, openInfo) {
+  clickedElement.addEventListener("click", () => {
+    openInfo.classList.add("active");
+  });
 }
 //Close info div
-function lessInfo() {
-  infoAboutObject.classList.remove("active");
+function lessInfo(closeIcon, closeInfo) {
+  closeIcon.addEventListener('click',() => closeInfo.classList.remove('active'));
+
 }
-closeInfo.addEventListener("click", lessInfo);
-infoIcon.addEventListener("click", moreInfo);
+
 
 //Render cards
 
@@ -92,6 +95,7 @@ function renderCards(doc) {
   const info = document.createElement("div");
   info.className = "info";
   card.appendChild(info);
+  moreInfo(secondIcon, info);
 
   const firstP = document.createElement("p");
   // firstP.textContent = `City: ${doc.data().city}`;
@@ -116,4 +120,8 @@ function renderCards(doc) {
   const lastIcon = document.createElement("i");
   lastIcon.className = "fas fa-times";
   info.appendChild(lastIcon);
+  lessInfo(lastIcon, info);
 }
+
+
+renderTest.addEventListener('click',renderCards);
