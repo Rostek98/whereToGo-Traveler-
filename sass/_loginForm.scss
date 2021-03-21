@@ -10,8 +10,9 @@
   width: 90%;
   min-height: 85vh;
   z-index: 1;
+
   @media (min-width: 576px) {
-    width: 75%;
+    width: 50%;
     min-height: 95vh;
   }
   @media (min-width: 768px) {
@@ -20,9 +21,22 @@
   @media (min-width: 992px) {
     min-height: 70vh;
   }
-  @media (min-width: 1400px) {
-    width: 40%;
+  @media (min-width: 1350px) {
+    width: 50%;
   }
+
+  @media only screen and (min-device-width: 1024px) and (max-device-width: 1366px) and (-webkit-min-device-pixel-ratio: 2) {
+    min-height: 50%;
+  }
+
+  @media (min-width: 1350px) {
+    min-height: 75vh;
+  }
+  @media (min-width: 1550px) {
+    width: 40%;
+    min-height: 65vh;
+  }
+
   .image {
     @media (min-width: 992px) {
       background-image: url(../img/pexels-mark-mccammon-1080953.jpg);
@@ -31,7 +45,7 @@
       background-repeat: no-repeat;
       border-radius: 10px 0 0 10px;
     }
-    @media (min-width: 1400px) {
+    @media (min-width: 1024px) {
       width: 50%;
       position: absolute;
       top: 0;
@@ -47,12 +61,12 @@
     justify-content: space-around;
     width: 70%;
     @media (min-width: 576px) {
-      width: 60%;
+      width: 80%;
     }
     @media (min-width: 992px) {
       width: 50%;
     }
-    @media (min-width: 1400px) {
+    @media (min-width: 1024px) {
       width: 50%;
       position: absolute;
       top: 0;
@@ -77,6 +91,7 @@
         font-size: 15px;
         padding: 5px 0;
         transition: 0.2s;
+
         @media (min-width: 992px) {
           width: 80%;
           align-self: center;
@@ -84,7 +99,10 @@
         @media (min-width: 1200px) {
           width: 60%;
         }
-        @media (min-width: 1400px) {
+        @media (min-width: 1350px) {
+          width: 80%;
+        }
+        @media (min-width: 1550px) {
           width: 80%;
         }
 
@@ -111,18 +129,21 @@
         width: 100%;
         margin: 0 auto;
         cursor: pointer;
-        transition: .3s;
+        transition: 0.3s;
         @media (min-width: 576px) {
-          width: 80%;
+          width: 100%;
           margin-top: 5px;
         }
         @media (min-width: 1200px) {
-          &:hover{
+          &:hover {
             background-color: black;
           }
           width: 60%;
         }
-        @media (min-width: 1400px) {
+        @media (min-width: 1350px) {
+          width: 80%;
+        }
+        @media (min-width: 1550px) {
           width: 80%;
         }
       }
@@ -171,4 +192,94 @@
       cursor: pointer;
     }
   }
+}
+.modal-wrap.active {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.295);
+  z-index: 1;
+}
+.modal-wrap {
+  transition: 0.5s;
+
+  .modal {
+    // display: none;
+    transform: scale(0);
+  }
+  .modal.active {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 80%;
+    height: 20%;
+    background-color: white;
+    z-index: 1;
+    border-radius: 10px;
+    transform: scale(1) translate(-50%, -50%);
+
+    transition: 0.5s;
+
+    @media (min-width: 576px) {
+      height: 40%;
+      width: 60%;
+    }
+    @media (min-width: 768px) {
+      height: 50%;
+      width: 50%;
+    }
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 1) {
+      height: 20%;
+    }
+    @media (min-width: 1024px) {
+      height: 15%;
+      width: 40%;
+    }
+    @media (min-width: 1200px) {
+      height: 25%;
+      width: 25%;
+    }
+    @media (min-width: 1550px) {
+      height: 20%;
+      width: 20%;
+    }
+
+    .fa-times {
+      position: absolute;
+      top: 5%;
+      right: 5%;
+      font-size: 20px;
+    }
+    .error-message {
+      position: absolute;
+      font-size: 15px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 95%;
+      text-align: center;
+      line-height: 150%;
+      color: rgb(5, 151, 17);
+    }
+    .fa-exclamation-triangle {
+      position: absolute;
+      color: orange;
+      top: 5%;
+      left: 50%;
+      transform: translate(-50%, -5%);
+      font-size: 35px;
+
+      @media (min-width: 768px) {
+        top: 15%;
+
+        transform: translate(-50%, -15%);
+      }
+    }
+  }
+}
+
+.wrapper.blur {
+  filter: blur(2px);
 }

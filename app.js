@@ -22,8 +22,14 @@ const imagePart = document.querySelector(".image");
 const hamburger = document.querySelector(".fas.fa-bars");
 const ul = document.querySelector("ul");
 const logOutBtn = document.querySelector(".logOut");
+const wrapper = document.querySelector(".wrapper");
+const modalWrapper = document.querySelector(".modal-wrap ");
+const modal = document.querySelector(".modal");
+const modalIcon = document.querySelector(".modal-icon");
+const errorMessage = document.querySelector(".error-message");
 
 let left = true;
+
 //Change to register
 const toggleSign = () => {
   if (left) {
@@ -54,6 +60,13 @@ const toggleSign = () => {
 
 switchToRegister.addEventListener("click", toggleSign);
 
+function errorModalMessage(error) {
+  wrapper.classList.add("blur");
+  modalWrapper.classList.add("active");
+  modal.classList.add("active");
+  errorMessage.textContent = error;
+}
+
 //Sign UP
 function signUp(e) {
   e.preventDefault();
@@ -65,7 +78,8 @@ function signUp(e) {
       window.location.href = "main.html";
     })
     .catch((error) => {
-      alert(error.message);
+      var errorMessage = error.message;
+      errorModalMessage(errorMessage);
     });
 }
 firebase.auth().onAuthStateChanged(function (user) {
@@ -78,6 +92,13 @@ firebase.auth().onAuthStateChanged(function (user) {
   }
 });
 
+function closeErrorMessage() {
+  wrapper.classList.remove("blur");
+  modalWrapper.classList.remove("active");
+  modal.classList.remove("active");
+}
+modalIcon.addEventListener("click", closeErrorMessage);
+
 function signIn(e) {
   e.preventDefault();
   firebase
@@ -88,7 +109,9 @@ function signIn(e) {
     })
     .catch(function (error) {
       var errorMessage = error.message;
-      alert(errorMessage);
+
+      errorModalMessage(errorMessage);
+      // alert(errorMessage);
     });
 }
 
