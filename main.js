@@ -20,6 +20,7 @@ const closeInfo = document.querySelector(".fas.fa-times");
 const mainDiv = document.querySelector("main");
 const renderTest = document.querySelector(".renderTest");
 const searchBar = document.querySelector(".searchBar");
+const txt = "SOMEBODY HERE ME?";
 
 // Hamburger
 
@@ -124,42 +125,94 @@ function renderCards(doc) {
   lessInfo(lastIcon, info);
 }
 
-//Function filter
-
+// Function filter
 function findAndFilter(e) {
-  const inputValue = e.target.value.toLowerCase();
-  if (inputValue === "odessa") {
-    orderOdessa();
+  let inputValue = e.target.value.toLowerCase();
+  if (
+    inputValue === "odessa" ||
+    inputValue === "kharkiv" ||
+    inputValue === "chernivtsi" ||
+    inputValue === "kiev" ||
+    inputValue === "lviv"
+  ) {
+    findCity(
+      "Ukraine",
+      inputValue[0].toUpperCase() + inputValue.slice(1).toLowerCase()
+    );
   } else if (inputValue === "") mainDiv.innerHTML = "";
-  if (inputValue === "warsaw") {
-    orderWarsaw();
+  if (
+    inputValue === "warsaw" ||
+    inputValue === "krakow" 
+  ) {
+    findCity(
+      "Poland",
+      inputValue[0].toUpperCase() + inputValue.slice(1).toLowerCase()
+    );
+  } else if (inputValue === "") mainDiv.innerHTML = "";
+  if (
+    inputValue === "moscov" ||
+    inputValue === "saint petersburg" 
+  ) {
+    findCity(
+      "Russia",
+      inputValue[0].toUpperCase() + inputValue.slice(1).toLowerCase()
+    );
+  } else if (inputValue === "") mainDiv.innerHTML = "";
+  if (
+    inputValue === "dresden" ||
+    inputValue === "berlin" ||
+    inputValue === "munich" 
+  ) {
+    findCity(
+      "Deutschland",
+      inputValue[0].toUpperCase() + inputValue.slice(1).toLowerCase()
+    );
+  } else if (inputValue === "") mainDiv.innerHTML = "";
+  if (
+    inputValue === "barcelona" ||
+    inputValue === "granada"
+  ) {
+    findCity(
+      "Spain",
+      inputValue[0].toUpperCase() + inputValue.slice(1).toLowerCase()
+    );
+  } else if (inputValue === "") mainDiv.innerHTML = "";
+
+  if (
+    inputValue === "ukraine" ||
+    inputValue === "poland" ||
+    inputValue === "russia" ||
+    inputValue === "spain"
+  ) {
+    showCounty(inputValue[0].toUpperCase() + inputValue.slice(1).toLowerCase());
+  }
+  if( inputValue === "germany"){
+    inputValue = 'deutschland';
+    showCounty(inputValue[0].toUpperCase() + inputValue.slice(1).toLowerCase());
   }
 }
 
 searchBar.addEventListener("input", findAndFilter);
 
-function orderOdessa() {
-  db.collection("Ukraine")
-    .where("city", "==", "Odessa")
-    .get()
-    .then((querySnapshot) => {
-      querySnapshot.forEach((doc) => {
-        // doc.data() is never undefined for query doc snapshots
-        console.log(doc.id, " => ", doc.data());
-        renderCards(doc);
-      });
-    })
-    .catch((error) => {
-      console.log("Error getting documents: ", error);
-    });
-}
+//Order by city name 
 
-function orderWarsaw() {
-  var order = db.collection("Poland").where("city", "==", "Warsaw");
+function findCity(country, city) {
+  console.log(`${country} i ${city}`);
+  var order = db.collection(country).where("city", "==", city);
   order.get().then(function (querySnapshot) {
     querySnapshot.forEach(function (doc) {
-      console.log(doc.id, " => ", doc.data());
       renderCards(doc);
     });
   });
+}
+
+//Order by country name
+function showCounty(country) {
+  db.collection(country)
+    .get()
+    .then(function (querySnapshot) {
+      querySnapshot.forEach(function (doc) {
+        renderCards(doc);
+      });
+    });
 }

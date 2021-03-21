@@ -89,7 +89,7 @@ main {
     position: relative;
     display: flex;
     flex-direction: column;
-    min-height: 350px;
+    min-height: 280px;
     box-shadow: 0 0 10px 0 black;
     width: 90%;
     margin: 10px auto;
@@ -99,6 +99,7 @@ main {
     }
     @media (min-width: 1200px) {
       width: 30%;
+      min-height: 300px;
     }
     @media (min-width: 1400px) {
       width: 26%;
@@ -124,11 +125,12 @@ main {
       justify-content: space-around;
       align-items: center;
       flex-grow: 0.5;
-      background-color: rgb(13, 13, 14);
+      background: rgb(59, 10, 39);
 
       h2 {
         font-size: 22px;
         font-family: "Lobster", cursive;
+        font-weight: 400;
         color: white;
       }
 
@@ -139,9 +141,12 @@ main {
         }
         .fa-map-marker-alt {
           color: rgb(231, 31, 31);
+          cursor: pointer;
+          
         }
         .fa-info-circle {
           color: white;
+          cursor: pointer;
         }
       }
     }

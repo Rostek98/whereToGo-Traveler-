@@ -585,7 +585,7 @@ main .card {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  min-height: 350px;
+  min-height: 280px;
   -webkit-box-shadow: 0 0 10px 0 black;
           box-shadow: 0 0 10px 0 black;
   width: 90%;
@@ -602,6 +602,7 @@ main .card {
 @media (min-width: 1200px) {
   main .card {
     width: 30%;
+    min-height: 300px;
   }
 }
 
@@ -648,12 +649,13 @@ main .card .cardTitle {
   -webkit-box-flex: 0.5;
       -ms-flex-positive: 0.5;
           flex-grow: 0.5;
-  background-color: #0d0d0e;
+  background: #3b0a27;
 }
 
 main .card .cardTitle h2 {
   font-size: 22px;
   font-family: "Lobster", cursive;
+  font-weight: 400;
   color: white;
 }
 
@@ -664,10 +666,12 @@ main .card .cardTitle .textAndIcons i {
 
 main .card .cardTitle .textAndIcons .fa-map-marker-alt {
   color: #e71f1f;
+  cursor: pointer;
 }
 
 main .card .cardTitle .textAndIcons .fa-info-circle {
   color: white;
+  cursor: pointer;
 }
 
 main .card .info {
