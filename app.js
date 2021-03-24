@@ -51,10 +51,16 @@ const toggleSign = () => {
   signInBtn.classList.toggle("active");
   signUpBtn.classList.toggle("active");
 
-  if (mainTxt.textContent === "Sign In") {
+
+  if (
+    mainTxt.textContent === "Sign In" &&
+    switchToRegister.textContent === "Sign up"
+  ) {
     mainTxt.textContent = "Sign Up";
+    switchToRegister.textContent = "Sign In";
   } else {
     mainTxt.textContent = "Sign In";
+    switchToRegister.textContent = "Sign Up";
   }
 };
 

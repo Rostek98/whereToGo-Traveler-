@@ -1,15 +1,15 @@
 .wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   position: absolute;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   background-color: white;
   border-radius: 10px;
   width: 90%;
@@ -33,6 +33,12 @@
 @media (min-width: 992px) {
   .wrapper {
     min-height: 70vh;
+  }
+}
+
+@media (min-width: 1024px) {
+  .wrapper {
+    width: 60%;
   }
 }
 
@@ -95,6 +101,9 @@
   -ms-flex-pack: distribute;
       justify-content: space-around;
   width: 70%;
+  -webkit-transition: 1s;
+  transition: 1s;
+  font-family: "Montserrat", sans-serif;
 }
 
 @media (min-width: 576px) {
@@ -160,6 +169,7 @@
   padding: 5px 0;
   -webkit-transition: 0.2s;
   transition: 0.2s;
+  font-family: "Montserrat", sans-serif;
 }
 
 @media (min-width: 992px) {
@@ -221,6 +231,13 @@
 @media (min-width: 576px) {
   .wrapper .registration form button {
     width: 100%;
+    margin-top: 5px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .wrapper .registration form button {
+    width: 80%;
     margin-top: 5px;
   }
 }
@@ -319,7 +336,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.295);
+  background-color: rgba(0, 0, 0, 0.767);
   z-index: 1;
 }
 
@@ -337,13 +354,13 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 80%;
-  height: 20%;
-  background-color: white;
-  z-index: 1;
-  border-radius: 10px;
   -webkit-transform: scale(1) translate(-50%, -50%);
           transform: scale(1) translate(-50%, -50%);
+  width: 80%;
+  height: 30%;
+  z-index: 1;
+  border-radius: 10px;
+  background: #3b0a27;
   -webkit-transition: 0.5s;
   transition: 0.5s;
 }
@@ -394,19 +411,25 @@
   top: 5%;
   right: 5%;
   font-size: 20px;
+  cursor: pointer;
 }
 
 .modal-wrap .modal.active .error-message {
   position: absolute;
-  font-size: 15px;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+  font-size: 15px;
   width: 95%;
   text-align: center;
   line-height: 150%;
   color: #059711;
+  color: white;
+}
+
+.modal-wrap .modal.active .fa-times.modal-icon {
+  color: white;
 }
 
 .modal-wrap .modal.active .fa-exclamation-triangle {
@@ -604,6 +627,67 @@ nav ul.active {
   min-height: 100vh;
 }
 
+.wrapper-finder .modal-iframe {
+  display: none;
+}
+
+.wrapper-finder .modal-iframe.active {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.767);
+  z-index: 1;
+  display: block;
+  z-index: 2;
+}
+
+.wrapper-finder .modal-iframe.active .modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: scale(1) translate(-50%, -50%);
+          transform: scale(1) translate(-50%, -50%);
+  width: 95%;
+  height: 100vh;
+}
+
+@media (min-width: 1024px) {
+  .wrapper-finder .modal-iframe.active .modal {
+    width: 550px;
+    height: 550px;
+    background-color: white;
+  }
+}
+
+.wrapper-finder .modal-iframe.active .modal iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 90%;
+  height: 90%;
+}
+
+.wrapper-finder .modal-iframe.active .modal .fa-times {
+  position: absolute;
+  top: 5%;
+  right: 7%;
+  font-size: 40px;
+  color: red;
+  z-index: 3;
+  cursor: pointer;
+}
+
+@media (min-width: 1024px) {
+  .wrapper-finder .modal-iframe.active .modal .fa-times {
+    color: black;
+    font-size: 30px;
+  }
+}
+
 .wrapper-finder header {
   min-height: 50vh;
   background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(17, 17, 17, 0.52)), to(rgba(117, 19, 93, 0.73))), url("../img/mainPhone/pexels-bao-dang-3700369 (1).jpg");
@@ -758,6 +842,7 @@ main .card {
 
 @media (min-width: 1400px) {
   main .card {
+    min-height: 350px;
     width: 26%;
   }
 }
@@ -862,6 +947,7 @@ main .card .info .fas.fa-times {
   top: 5%;
   right: 10%;
   font-size: 25px;
+  cursor: pointer;
 }
 
 main .card .info.active {

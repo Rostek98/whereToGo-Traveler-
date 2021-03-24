@@ -20,7 +20,9 @@ const closeInfo = document.querySelector(".fas.fa-times");
 const mainDiv = document.querySelector("main");
 const renderTest = document.querySelector(".renderTest");
 const searchBar = document.querySelector(".searchBar");
-const txt = "SOMEBODY HERE ME?";
+const popUpFinder = document.querySelector('.modal-iframe');
+const mapFrame = document.querySelector('.mapFrame');
+
 
 // Hamburger
 
@@ -60,6 +62,7 @@ function lessInfo(closeIcon, closeInfo) {
 //Render cards
 
 function renderCards(doc) {
+
   const card = document.createElement("div");
   card.className = "card";
   mainDiv.appendChild(card);
@@ -70,7 +73,6 @@ function renderCards(doc) {
 
   const image = document.createElement("img");
   image.setAttribute("src", doc.data().img);
-  // image.setAttribute("src", "./img/mainPhone/for1920.jpg");
   cardImage.appendChild(image);
 
   const cardTitle = document.createElement("div");
@@ -79,7 +81,6 @@ function renderCards(doc) {
 
   const h2 = document.createElement("h2");
   h2.textContent = doc.data().name;
-  // h2.textContent = "Name of place";
   cardTitle.appendChild(h2);
 
   const textAndIcons = document.createElement("div");
@@ -89,6 +90,17 @@ function renderCards(doc) {
   const firstIcon = document.createElement("i");
   firstIcon.className = "fas fa-map-marker-alt";
   textAndIcons.appendChild(firstIcon);
+
+ firstIcon.addEventListener('click',()=> {
+  const close = document.querySelector('.closeMap');
+  popUpFinder.classList.add('active');
+  mapFrame.setAttribute("src",doc.data().map);
+  close.addEventListener('click',()=>{
+    popUpFinder.classList.remove('active');
+  })
+   console.log(doc.data().map);
+ })
+
 
   const secondIcon = document.createElement("i");
   secondIcon.className = "fas fa-info-circle";
@@ -101,22 +113,18 @@ function renderCards(doc) {
 
   const firstP = document.createElement("p");
   firstP.textContent = `City: ${doc.data().city}`;
-  // firstP.textContent = "City:Lviv";
   info.appendChild(firstP);
 
   const secondP = document.createElement("p");
   secondP.textContent = `Region: ${doc.data().region}`;
-  // secondP.textContent = `Region:Lviv Oblast`;
   info.appendChild(secondP);
 
   const thirdP = document.createElement("p");
   thirdP.textContent = `Code: ${doc.data().postalcode}`;
-  // thirdP.textContent = `Postal Code: 79008`;
   info.appendChild(thirdP);
 
   const fourthP = document.createElement("p");
   fourthP.textContent = `Address: ${doc.data().address}`;
-  // fourthP.textContent = `Address:Rynok Square, 1`;
   info.appendChild(fourthP);
 
   const lastIcon = document.createElement("i");
@@ -140,19 +148,13 @@ function findAndFilter(e) {
       inputValue[0].toUpperCase() + inputValue.slice(1).toLowerCase()
     );
   } else if (inputValue === "") mainDiv.innerHTML = "";
-  if (
-    inputValue === "warsaw" ||
-    inputValue === "krakow" 
-  ) {
+  if (inputValue === "warsaw" || inputValue === "krakow") {
     findCity(
       "Poland",
       inputValue[0].toUpperCase() + inputValue.slice(1).toLowerCase()
     );
   } else if (inputValue === "") mainDiv.innerHTML = "";
-  if (
-    inputValue === "moscov" ||
-    inputValue === "saint petersburg" 
-  ) {
+  if (inputValue === "moscov" || inputValue === "saint petersburg") {
     findCity(
       "Russia",
       inputValue[0].toUpperCase() + inputValue.slice(1).toLowerCase()
@@ -161,17 +163,14 @@ function findAndFilter(e) {
   if (
     inputValue === "dresden" ||
     inputValue === "berlin" ||
-    inputValue === "munich" 
+    inputValue === "munich"
   ) {
     findCity(
       "Deutschland",
       inputValue[0].toUpperCase() + inputValue.slice(1).toLowerCase()
     );
   } else if (inputValue === "") mainDiv.innerHTML = "";
-  if (
-    inputValue === "barcelona" ||
-    inputValue === "granada"
-  ) {
+  if (inputValue === "barcelona" || inputValue === "granada") {
     findCity(
       "Spain",
       inputValue[0].toUpperCase() + inputValue.slice(1).toLowerCase()
@@ -186,15 +185,15 @@ function findAndFilter(e) {
   ) {
     showCounty(inputValue[0].toUpperCase() + inputValue.slice(1).toLowerCase());
   }
-  if( inputValue === "germany"){
-    inputValue = 'deutschland';
+  if (inputValue === "germany") {
+    inputValue = "deutschland";
     showCounty(inputValue[0].toUpperCase() + inputValue.slice(1).toLowerCase());
   }
 }
 
 searchBar.addEventListener("input", findAndFilter);
 
-//Order by city name 
+//Order by city name
 
 function findCity(country, city) {
   console.log(`${country} i ${city}`);
