@@ -31,9 +31,8 @@
         z-index: 3;
         cursor: pointer;
         @media (min-width: 1024px) {
-        color: black;
-        font-size: 30px;
-          
+          color: black;
+          font-size: 30px;
         }
       }
     }
@@ -49,7 +48,9 @@
       url("../img/mainPhone/pexels-bao-dang-3700369\ \(1\).jpg");
     background-size: cover;
     background-position: center;
-    margin-bottom: 50px;
+    @media (min-width: 768px) {
+      margin-bottom: 50px;
+    }
     nav {
       height: 10vh;
     }
@@ -126,14 +127,15 @@ main {
     position: relative;
     display: flex;
     flex-direction: column;
-    min-height: 280px;
-    box-shadow: 0 0 10px 0 black;
-    width: 90%;
-    margin: 10px auto;
-    margin-bottom: 50px;
+    min-height: 340px;
+    width: 100%;
     @media (min-width: 768px) {
       width: 45%;
+      margin: 10px auto;
+      margin-bottom: 50px;
+      box-shadow: 0 0 10px 0 black;
     }
+
     @media (min-width: 1200px) {
       width: 30%;
       min-height: 300px;
@@ -152,9 +154,14 @@ main {
       height: auto;
       flex-grow: 4;
       overflow: hidden;
+     
       img {
         position: absolute;
         width: 100%;
+        transition: 1s;
+        &:hover{
+          width: 110%;
+        }
       }
     }
     .cardTitle {
@@ -197,12 +204,16 @@ main {
       left: 0;
       right: 0;
       bottom: 0;
-      background: rgb(59, 10, 39);
+      background: black;
       overflow: hidden;
       font-family: "Montserrat", sans-serif;
       font-size: 17px;
       font-weight: 700;
       color: white;
+      @media (min-width: 768px) {
+        background: rgb(59, 10, 39);
+        color: white;
+      }
       p {
         padding: 20px 0;
       }

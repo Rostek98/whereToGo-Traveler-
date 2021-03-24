@@ -92,7 +92,9 @@ function renderCards(doc) {
   textAndIcons.appendChild(firstIcon);
 
  firstIcon.addEventListener('click',()=> {
+   console.log('dziala');
   const close = document.querySelector('.closeMap');
+  console.log(close);
   popUpFinder.classList.add('active');
   mapFrame.setAttribute("src",doc.data().map);
   close.addEventListener('click',()=>{
