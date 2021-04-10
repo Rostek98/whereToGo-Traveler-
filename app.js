@@ -36,32 +36,22 @@ const toggleSign = () => {
     formPart.style.right = "50%";
     imagePart.style.left = "50%";
     imagePart.style.borderRadius = "0px 10px 10px 0px";
-
-    left = false;
+    mainTxt.textContent = "Sign Up";
+    switchToRegister.textContent = "Sign In";
     left = false;
   } else {
     formPart.style.right = "0%";
     imagePart.style.left = "0%";
     imagePart.style.borderRadius = "10px 0px 0px 10px";
+    mainTxt.textContent = "Sign In";
+    switchToRegister.textContent = "Sign up";
 
     left = true;
-    left = true;
   }
-  nameField.classList.toggle("active");
+  // nameField.classList.toggle("active");
+
   signInBtn.classList.toggle("active");
   signUpBtn.classList.toggle("active");
-
-
-  if (
-    mainTxt.textContent === "Sign In" &&
-    switchToRegister.textContent === "Sign up"
-  ) {
-    mainTxt.textContent = "Sign Up";
-    switchToRegister.textContent = "Sign In";
-  } else {
-    mainTxt.textContent = "Sign In";
-    switchToRegister.textContent = "Sign Up";
-  }
 };
 
 switchToRegister.addEventListener("click", toggleSign);
